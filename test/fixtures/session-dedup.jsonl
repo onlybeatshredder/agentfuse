@@ -1,0 +1,16 @@
+// FIXTURE — fabricated test data, not real usage.
+// Session transcript for dedup tests: one API response = several transcript
+// lines repeating the identical usage object. msg-1 appears 2x, msg-2 appears
+// 3x, msg-3 appears 1x. Naive summation overcounts ~2.1x; deduped totals are:
+//   input 17,000 | output 3,500 | cacheCreation 51,000 | cacheRead 300,000
+//   cost $0.29065 (1h cache-write TTL, Sonnet 5.5 + Haiku 5.5 prices)
+//   msg-1 Sonnet: 10000*2 + 50000*4 + 200000*0.10 + 2000*10 = $0.26
+//   msg-2 Sonnet:  5000*2 + 100000*0.10 + 1000*10          = $0.03
+//   msg-3 Haiku:   2000*0.10 + 1000*0.20 + 500*0.50        = $0.00065
+{"type":"assistant","message":{"id":"msg-1","model":"claude-sonnet-5-5-20251101","usage":{"input_tokens":10000,"output_tokens":2000,"cache_creation_input_tokens":50000,"cache_read_input_tokens":200000},"content":[{"type":"text","text":"hi"}]},"costUSD":0.26}
+{"type":"assistant","message":{"id":"msg-1","model":"claude-sonnet-5-5-20251101","usage":{"input_tokens":10000,"output_tokens":2000,"cache_creation_input_tokens":50000,"cache_read_input_tokens":200000},"content":[{"type":"text","text":"hi"}]},"costUSD":0.26}
+{"type":"assistant","message":{"id":"msg-2","model":"claude-sonnet-5-5-20251101","usage":{"input_tokens":5000,"output_tokens":1000,"cache_creation_input_tokens":0,"cache_read_input_tokens":100000},"content":[{"type":"tool_use","id":"toolu-1","name":"Bash","input":{"command":"ls"}}]}}
+{"type":"assistant","message":{"id":"msg-2","model":"claude-sonnet-5-5-20251101","usage":{"input_tokens":5000,"output_tokens":1000,"cache_creation_input_tokens":0,"cache_read_input_tokens":100000},"content":[{"type":"tool_use","id":"toolu-1","name":"Bash","input":{"command":"ls"}}]}}
+{"type":"assistant","message":{"id":"msg-2","model":"claude-sonnet-5-5-20251101","usage":{"input_tokens":5000,"output_tokens":1000,"cache_creation_input_tokens":0,"cache_read_input_tokens":100000},"content":[{"type":"tool_use","id":"toolu-1","name":"Bash","input":{"command":"ls"}}]}}
+{"type":"assistant","message":{"id":"msg-3","model":"claude-haiku-5-5-20251101","usage":{"input_tokens":2000,"output_tokens":500,"cache_creation_input_tokens":1000,"cache_read_input_tokens":0},"content":[{"type":"text","text":"done"}]},"costUSD":0.0007}
+{"type":"user","message":{"role":"user","content":"hello"}}
