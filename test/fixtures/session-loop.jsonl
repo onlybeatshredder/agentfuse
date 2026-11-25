@@ -1,0 +1,10 @@
+// FIXTURE — fabricated test data, not real usage.
+// Loop scenario: the same Bash call ("sleep 1") 6 times consecutively.
+// Each line is a distinct message.id with tiny usage so cost stays ~$0.
+// Expected: toolCalls 6, consecutiveCount 6, lastToolSignature = Bash:{"command":"sleep 1"}.
+{"type":"assistant","message":{"id":"loop-1","model":"claude-sonnet-5-5-20251101","usage":{"input_tokens":100,"output_tokens":10,"cache_creation_input_tokens":0,"cache_read_input_tokens":0},"content":[{"type":"tool_use","id":"t1","name":"Bash","input":{"command":"sleep 1"}}]}}
+{"type":"assistant","message":{"id":"loop-2","model":"claude-sonnet-5-5-20251101","usage":{"input_tokens":100,"output_tokens":10,"cache_creation_input_tokens":0,"cache_read_input_tokens":0},"content":[{"type":"tool_use","id":"t2","name":"Bash","input":{"command":"sleep 1"}}]}}
+{"type":"assistant","message":{"id":"loop-3","model":"claude-sonnet-5-5-20251101","usage":{"input_tokens":100,"output_tokens":10,"cache_creation_input_tokens":0,"cache_read_input_tokens":0},"content":[{"type":"tool_use","id":"t3","name":"Bash","input":{"command":"sleep 1"}}]}}
+{"type":"assistant","message":{"id":"loop-4","model":"claude-sonnet-5-5-20251101","usage":{"input_tokens":100,"output_tokens":10,"cache_creation_input_tokens":0,"cache_read_input_tokens":0},"content":[{"type":"tool_use","id":"t4","name":"Bash","input":{"command":"sleep 1"}}]}}
+{"type":"assistant","message":{"id":"loop-5","model":"claude-sonnet-5-5-20251101","usage":{"input_tokens":100,"output_tokens":10,"cache_creation_input_tokens":0,"cache_read_input_tokens":0},"content":[{"type":"tool_use","id":"t5","name":"Bash","input":{"command":"sleep 1"}}]}}
+{"type":"assistant","message":{"id":"loop-6","model":"claude-sonnet-5-5-20251101","usage":{"input_tokens":100,"output_tokens":10,"cache_creation_input_tokens":0,"cache_read_input_tokens":0},"content":[{"type":"tool_use","id":"t6","name":"Bash","input":{"command":"sleep 1"}}]}}
