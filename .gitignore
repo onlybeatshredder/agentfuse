@@ -1,0 +1,5 @@
+node_modules/
+dist/
+.agentfuse/
+*.log
+.DS_Store
