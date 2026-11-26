@@ -169,4 +169,6 @@ AgentFuse is open source under the MIT License — see LICENSE. The local
 engine is free forever; a paid cloud tier (policy sync across machines,
 teams, hosted sandbox) comes later.
 
+Paid cloud tier (policy sync across machines, teams, hosted sandbox) — join the early-access waitlist: https://docs.google.com/forms/d/e/1FAIpQLSdtnLL4qddYqDPzf_e9Sm6aOAqdLDYqkLKXPrkFzv0ZcBvGSA/viewform
+
 If it saves you money, tip the builder: https://cash.app/$beatshredder
